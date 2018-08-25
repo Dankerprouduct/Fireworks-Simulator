@@ -23,6 +23,7 @@ namespace Fireworks_Simulator
         public bool useGravity;
         public bool dynamicSizing = true; 
         public float scaleMod = 1;
+        public bool trail = false; 
         float originalXspeed;
         float dampending;
 
@@ -51,14 +52,14 @@ namespace Fireworks_Simulator
             this.textureID = textureID; 
             
             velocity = new Vector2();
-            velocity.Y = (float)Math.Sin(rotation) * force * mass;
-            velocity.X = (float)Math.Cos(rotation) * force * mass;
+            velocity.Y = (float)Math.Sin(rotation) * (force / mass);
+            velocity.X = (float)Math.Cos(rotation) * (force / mass);
 
 
             originalXspeed = velocity.X;
             //scale = 1;
             dampending = Game1.random.Next(90, 99);
-
+            
             this.alive = true;
 
         }
@@ -75,15 +76,17 @@ namespace Fireworks_Simulator
             this.textureID = particle.textureID;
 
             velocity = new Vector2();
-            velocity.Y = (float)Math.Sin(particle.rotation) * particle.force * mass;
-            velocity.X = (float)Math.Cos(particle.rotation) * particle.force * mass;
+            velocity.Y = (float)Math.Sin(particle.rotation) * (particle.force / mass);
+            velocity.X = (float)Math.Cos(particle.rotation) * (particle.force / mass);
 
             originalXspeed = velocity.X;
             //scale = 1;
-            dampending = Game1.random.Next(95, 99);
+            dampending = Game1.random.Next(85, 99);
             scale = particle.scale;
             dynamicSizing = particle.dynamicSizing;
             scaleMod = particle.scaleMod;
+            trail = particle.trail;
+            colors = particle.colors; 
             this.alive = true;
         }
         
@@ -91,8 +94,11 @@ namespace Fireworks_Simulator
         {
             position.X += velocity.X;
             position.Y += velocity.Y;
-           // Console.WriteLine(velocity); 
-
+            // Console.WriteLine(velocity);
+            if (trail)
+            {
+                Trail();
+            }
             velocity.Y += Game1.gravity;
             velocity.X *= dampending / 100;
 
@@ -101,16 +107,25 @@ namespace Fireworks_Simulator
                 scale = (velocity.X / originalXspeed) * scaleMod; 
             }
 
-            if(Math.Abs(velocity.X) <= .0001f)
+            if(Math.Abs(scale) <= .01f)
             {
                Destroy();
-               Console.WriteLine("destroyed particle"); 
+              // Console.WriteLine("destroyed particle"); 
             }
         }
-
+        public void Trail()
+        {
+            Color[] trailColors = new Color[2];
+            trailColors[0] = Color.White;
+            trailColors[1] = Color.Yellow;
+            Particle particle = new Particle(2, position, rotation, 1, colors, textureID);
+            particle.scaleMod = .5f; 
+            Game1.particleManager.MakeParticle(particle);
+            
+        }
         public void Destroy()
         {
-            scale = 0;  
+            scale = 0;
             alive = false;
 
         }

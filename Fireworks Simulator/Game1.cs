@@ -23,7 +23,7 @@ namespace Fireworks_Simulator
         
         List<Firework> fireworks = new List<Firework>(); 
 
-        public static int WIDTH = 1080;
+        public static int WIDTH = 1920 ;
         public static int HEIGHT = (WIDTH / 16) * 9; 
         public Game1()
         {
@@ -39,7 +39,7 @@ namespace Fireworks_Simulator
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            particleManager = new ParticleManager(20000);
+            particleManager = new ParticleManager(15000);
             
             base.Initialize();
         }
@@ -68,16 +68,16 @@ namespace Fireworks_Simulator
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             
-            //firework.Update();
+             
             
 
             if(counter >= (60 * 1))
             {
                 //fireworks.Add(new Firework(new Vector2(random.Next(300, 1080 - 300), 600)));
-                int num = random.Next(1, 10);
+                int num = random.Next(1, 1);
                 for (int i = 0; i < num; i++)
                 {
-                    fireworks.Add(new Firework(new Vector2(random.Next(50, 1080 - 50), 600 )));
+                    fireworks.Add(new Firework(new Vector2(random.Next(50, WIDTH - 50), HEIGHT - 20 )));
                 }
                 
                 //Console.WriteLine("Made Firework " + fireworks.Count); 

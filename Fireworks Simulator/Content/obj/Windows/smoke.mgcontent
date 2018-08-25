@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/smoke.png</SourceFile>
-  <SourceTime>2018-08-22T16:02:42.2941149-04:00</SourceTime>
-  <DestFile>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/bin/Windows/smoke.xnb</DestFile>
-  <DestTime>2018-08-22T16:04:49.6094193-04:00</DestTime>
+  <SourceFile>C:/Users/Danker/Downloads/Fireworks-Simulator-master/Fireworks Simulator/Content/smoke.png</SourceFile>
+  <SourceTime>2018-08-24T09:59:24-04:00</SourceTime>
+  <DestFile>C:/Users/Danker/Downloads/Fireworks-Simulator-master/Fireworks Simulator/Content/bin/Windows/smoke.xnb</DestFile>
+  <DestTime>2018-08-24T13:57:09.8992279-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
