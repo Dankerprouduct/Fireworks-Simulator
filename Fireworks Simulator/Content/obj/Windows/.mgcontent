@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Danker/Downloads/Fireworks-Simulator-master/Fireworks Simulator/Content/particle.png</File>
-    <File>C:/Users/Danker/Downloads/Fireworks-Simulator-master/Fireworks Simulator/Content/smoke.png</File>
+    <File>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/particle.png</File>
+    <File>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/smoke.png</File>
   </SourceFiles>
 </SourceFileCollection>

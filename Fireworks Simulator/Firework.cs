@@ -35,7 +35,7 @@ namespace Fireworks_Simulator
         float angle; 
         public Firework(Vector2 position)
         {
-            explosion = Game1.random.Next(50, 50); 
+            explosion = Game1.random.Next(50, 100); 
             this.position = position;
             alive = true;
             mass = Game1.random.Next(1, 3);
@@ -93,7 +93,7 @@ namespace Fireworks_Simulator
                 Game1.particleManager.MakeParticle(particle);
             }
             
-            if(velocity.Y > -1 )
+            if(velocity.Y > 1 )
             {
                 if (alive)
                 {
@@ -216,7 +216,7 @@ namespace Fireworks_Simulator
             for (int i = 0; i < explosion; i++)
             {
 
-                Particle particle = new Particle(1f, position, MathHelper.ToRadians(Game1.random.Next(0, 360)), Game1.random.Next((int)(explosion / (explosion / 10)), (int)(explosion / (explosion / 20))), colors, 0);
+                Particle particle = new Particle(1f, position, MathHelper.ToRadians(Game1.random.Next(0, 720)), Game1.random.Next((int)(explosion / (explosion / 10)), (int)(explosion / (explosion / 20))), colors, 0);
                 particle.trail = flag; 
                 
 

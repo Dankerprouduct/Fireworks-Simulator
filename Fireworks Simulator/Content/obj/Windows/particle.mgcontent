@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Danker/Downloads/Fireworks-Simulator-master/Fireworks Simulator/Content/particle.png</SourceFile>
+  <SourceFile>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/particle.png</SourceFile>
   <SourceTime>2018-08-24T09:59:24-04:00</SourceTime>
-  <DestFile>C:/Users/Danker/Downloads/Fireworks-Simulator-master/Fireworks Simulator/Content/bin/Windows/particle.xnb</DestFile>
-  <DestTime>2018-08-24T13:57:09.8632358-04:00</DestTime>
+  <DestFile>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/bin/Windows/particle.xnb</DestFile>
+  <DestTime>2018-08-24T20:03:38.3896285-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

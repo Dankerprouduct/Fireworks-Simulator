@@ -50,3 +50,4 @@ C:\Users\Danker\Downloads\Fireworks-Simulator-master\Fireworks Simulator\bin\Win
 C:\Users\Danker\Downloads\Fireworks-Simulator-master\Fireworks Simulator\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\Danker\Downloads\Fireworks-Simulator-master\Fireworks Simulator\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\Danker\Downloads\Fireworks-Simulator-master\Fireworks Simulator\obj\x86\Debug\Fireworks Simulator.csprojResolveAssemblyReference.cache
+C:\Users\danke\Documents\Visual Studio 2017\Projects\Fireworks Simulator\Fireworks Simulator\bin\Windows\x86\Debug\Content\Font.xnb
