@@ -14,7 +14,7 @@ namespace Fireworks_Simulator
         Particle[] particlePool;
         int poolSize;
 
-        int currentParticles = 0; 
+        public int currentParticles = 0; 
         public static Texture2D[] textures; 
         public ParticleManager(int poolSize)
         {
@@ -61,7 +61,9 @@ namespace Fireworks_Simulator
         
         public void Update()
         {
-            for(int i = 0; i < particlePool.Length; i++)
+
+            currentParticles = 0;
+            for (int i = 0; i < particlePool.Length; i++)
             {
                 if (particlePool[i].alive)
                 {
@@ -70,8 +72,6 @@ namespace Fireworks_Simulator
                     
                 }
             }
-            Console.WriteLine(currentParticles); 
-            currentParticles = 0; 
         }
 
         public void Draw(SpriteBatch spriteBatch)

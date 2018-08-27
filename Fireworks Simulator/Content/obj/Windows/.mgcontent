@@ -4,7 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/particle.png</File>
-    <File>C:/Users/danke/Documents/Visual Studio 2017/Projects/Fireworks Simulator/Fireworks Simulator/Content/smoke.png</File>
+    <File>D:/Projects/Fireworks-Simulator/Fireworks Simulator/Content/particle.png</File>
+    <File>D:/Projects/Fireworks-Simulator/Fireworks Simulator/Content/smoke.png</File>
+    <File>D:/Projects/Fireworks-Simulator/Fireworks Simulator/Content/debugfont.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

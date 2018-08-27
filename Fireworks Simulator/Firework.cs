@@ -97,7 +97,7 @@ namespace Fireworks_Simulator
             {
                 if (alive)
                 {
-                    int num = Game1.random.Next(1, 9);
+                    int num = Game1.random.Next(9, 9);
                     switch (num)
                     {
                         case 1:
@@ -177,6 +177,23 @@ namespace Fireworks_Simulator
                             {
                                 Color[] colors = new Color[1];
                                 colors[0] = Color.HotPink;
+                                Explode(colors);
+                                break;
+                            }
+                        case 9:
+                            {
+                                int numberOfColors = Game1.random.Next(1, 10) ;
+                                Color[] colors = new Color[numberOfColors];
+                                for (int i = 0; i < numberOfColors; i++)
+                                {
+                                    int r = Game1.random.Next(0, 255);
+                                    int g = Game1.random.Next(0, 255);
+                                    int b = Game1.random.Next(0, 255);
+
+                                    colors[i] = new Color(r, g, b);
+                                    
+                                }
+
                                 Explode(colors);
                                 break;
                             }

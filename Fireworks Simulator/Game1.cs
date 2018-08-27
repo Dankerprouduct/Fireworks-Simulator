@@ -21,8 +21,9 @@ namespace Fireworks_Simulator
         KeyboardState keyboardState;
         KeyboardState oldKeyboardState;
         
-        List<Firework> fireworks = new List<Firework>(); 
+        List<Firework> fireworks = new List<Firework>();
 
+        SpriteFont font; 
         public static int WIDTH = 1920 ;
         public static int HEIGHT = (WIDTH / 16) * 9; 
         public Game1()
@@ -39,7 +40,7 @@ namespace Fireworks_Simulator
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            particleManager = new ParticleManager(15000);
+            particleManager = new ParticleManager(10000);
             
             base.Initialize();
         }
@@ -49,8 +50,8 @@ namespace Fireworks_Simulator
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             particleManager.LoadContent(Content);
-            
-            //firework.LoadContent(Content); 
+
+            font = Content.Load<SpriteFont>("debugfont"); 
 
         }
 
@@ -110,6 +111,8 @@ namespace Fireworks_Simulator
             spriteBatch.Begin();
 
             particleManager.Draw(spriteBatch);
+
+            spriteBatch.DrawString(font, "Particles: " + particleManager.currentParticles, new Vector2(10, 10), Color.White); 
             spriteBatch.End(); 
             base.Draw(gameTime);
 

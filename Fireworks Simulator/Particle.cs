@@ -26,6 +26,7 @@ namespace Fireworks_Simulator
         public bool trail = false; 
         float originalXspeed;
         float dampending;
+        float dampMod = 1; 
 
         public Particle()
         {
@@ -82,6 +83,7 @@ namespace Fireworks_Simulator
             originalXspeed = velocity.X;
             //scale = 1;
             dampending = Game1.random.Next(85, 99);
+            dampMod = particle.dampMod;
             scale = particle.scale;
             dynamicSizing = particle.dynamicSizing;
             scaleMod = particle.scaleMod;
@@ -100,7 +102,7 @@ namespace Fireworks_Simulator
                 Trail();
             }
             velocity.Y += Game1.gravity;
-            velocity.X *= dampending / 100;
+            velocity.X *= (dampending / 100) * dampMod;
 
             if (dynamicSizing)
             {
@@ -119,7 +121,9 @@ namespace Fireworks_Simulator
             trailColors[0] = Color.White;
             trailColors[1] = Color.Yellow;
             Particle particle = new Particle(2, position, rotation, 1, colors, textureID);
-            particle.scaleMod = .5f; 
+            particle.scaleMod = .5f;
+           
+            particle.dampMod = .9f; 
             Game1.particleManager.MakeParticle(particle);
             
         }
@@ -133,3 +137,4 @@ namespace Fireworks_Simulator
         
     }
 }
+ 
