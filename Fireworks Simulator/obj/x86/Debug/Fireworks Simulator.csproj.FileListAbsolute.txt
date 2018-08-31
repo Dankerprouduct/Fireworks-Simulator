@@ -80,3 +80,4 @@ D:\Projects\Fireworks-Simulator\Fireworks Simulator\obj\x86\Debug\Fireworks Simu
 D:\Projects\Fireworks-Simulator\Fireworks Simulator\obj\x86\Debug\Fireworks Simulator.exe
 D:\Projects\Fireworks-Simulator\Fireworks Simulator\obj\x86\Debug\Fireworks Simulator.pdb
 D:\Projects\Fireworks-Simulator\Fireworks Simulator\bin\Windows\x86\Debug\Content\debugfont.xnb
+C:\Users\danke\Documents\Visual Studio 2017\Projects\Fireworks Simulator\Fireworks Simulator\bin\Windows\x86\Debug\Content\debugfont.xnb

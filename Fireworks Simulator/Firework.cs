@@ -39,8 +39,7 @@ namespace Fireworks_Simulator
             this.position = position;
             alive = true;
             mass = Game1.random.Next(1, 3);
-            fuel = Game1.random.Next(10, 30); 
-            // AddForce(Game1.random.Next(10, 20)); 
+            fuel = Game1.random.Next(10, 30);
             AddForce(10);
             fuse = Game1.random.Next(1, 180); 
         }
@@ -64,11 +63,15 @@ namespace Fireworks_Simulator
             mouseState = Mouse.GetState();
             mousePosition = new Vector2(mouseState.X, mouseState.Y);
             angle = (float)Math.Atan2(velocity.Y, velocity.X); 
+
+            ///the firework doesnt start to rise until the counter is greater than the fuse length
+            ///this is to prevent a firework from spawning exactly every 1 second and gives a little more variety to the sim
             counter++; 
             if(counter > fuse)
             {
                 start = true; 
             }
+
             if (alive && start)
             {
                 if (fuel > 0)
@@ -85,19 +88,23 @@ namespace Fireworks_Simulator
                 color[1] = Color.Orange;
                 color[2] = Color.Yellow;
                 color[3] = Color.Gray; 
-
+                
+                // just the trail effect
                 Particle particle = new Particle(1, position, -angle +0, Game1.random.Next(10, 15), color, 0);
-                //particle.dynamicSizing = true;
                 particle.scaleMod = .5f;
 
                 Game1.particleManager.MakeParticle(particle);
             }
             
+
+            
+            // its reached the peak of its climb. Time to destroy 
             if(velocity.Y > 1 )
             {
+                // before it makes alive equal to false, choose a color scheme for the explosion then explode
                 if (alive)
                 {
-                    int num = Game1.random.Next(9, 9);
+                    int num = Game1.random.Next(1, 9);
                     switch (num)
                     {
                         case 1:
@@ -219,6 +226,7 @@ namespace Fireworks_Simulator
         }
 
         
+        // uses the colors given to create particles with a random color from the array
         public void Explode(Color[] colors)
         {
             bool flag = false;
@@ -230,6 +238,8 @@ namespace Fireworks_Simulator
             {
                 flag = false; 
             }
+
+            // "explosion" marks the intensity of the explosion. The higher the explosion variable the larger the explosion
             for (int i = 0; i < explosion; i++)
             {
 

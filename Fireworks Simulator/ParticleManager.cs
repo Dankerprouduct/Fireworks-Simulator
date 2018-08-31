@@ -23,6 +23,7 @@ namespace Fireworks_Simulator
             InitializeParticlePool(); 
         }
 
+        // initializes each ov the particles in the pool
         public void InitializeParticlePool()
         {
 
@@ -33,6 +34,7 @@ namespace Fireworks_Simulator
             
         }
 
+        // loads textures
         public void LoadContent(ContentManager content)
         {
             textures = new Texture2D[2];
@@ -41,6 +43,7 @@ namespace Fireworks_Simulator
 
         }
 
+        // uses a particle templete to make a new particle
         public void MakeParticle(Particle particle)
         {
             for(int i = 0; i < poolSize; i++)
@@ -53,12 +56,14 @@ namespace Fireworks_Simulator
             }
         }
 
+        // does the same thing as MakeParticle but doesnt use a template
         public void MakeParticle(float mass, Vector2 position, float rotation, float force, Color[] colors, int textureID)
         {
             Particle particle = new Particle(mass, position, rotation, force, colors, textureID);
             MakeParticle(particle); 
         }
         
+        // updates all current active particles
         public void Update()
         {
 
@@ -74,6 +79,7 @@ namespace Fireworks_Simulator
             }
         }
 
+        // renders all current active particles
         public void Draw(SpriteBatch spriteBatch)
         {
             for (int i = 0; i < poolSize; i++)

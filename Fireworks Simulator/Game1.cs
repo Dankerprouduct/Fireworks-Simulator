@@ -39,7 +39,8 @@ namespace Fireworks_Simulator
         
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+
+            // Initializing particle pool size
             particleManager = new ParticleManager(10000);
             
             base.Initialize();
@@ -72,24 +73,31 @@ namespace Fireworks_Simulator
              
             
 
+            // every second spawn a new firework
             if(counter >= (60 * 1))
             {
-                //fireworks.Add(new Firework(new Vector2(random.Next(300, 1080 - 300), 600)));
+
+                // whatever number you set to num determines the number of fireworks that spawn
                 int num = random.Next(1, 1);
                 for (int i = 0; i < num; i++)
                 {
                     fireworks.Add(new Firework(new Vector2(random.Next(50, WIDTH - 50), HEIGHT - 20 )));
                 }
-                
-                //Console.WriteLine("Made Firework " + fireworks.Count); 
+
                 counter = 0; 
                 
             }
-            //Console.WriteLine((60*5) + " " + counter);
+            // basically counys seconds
             counter++;
+
+            //update particle manager
             particleManager.Update(); 
+
+            // updates active fireworks
             for( int i = 0; i < fireworks.Count; i++)
             {
+                // if firework is "alive" aka active then update it 
+                // if not delete it
                 if (fireworks[i].alive)
                 {
                     fireworks[i].Update();

@@ -115,6 +115,9 @@ namespace Fireworks_Simulator
               // Console.WriteLine("destroyed particle"); 
             }
         }
+
+        // this allows the particle to create a new particle that is a copy of itself 
+        // this creates a trailing effect
         public void Trail()
         {
             Color[] trailColors = new Color[2];
